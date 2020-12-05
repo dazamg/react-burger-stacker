@@ -16,7 +16,7 @@ const BurgerStack = (props) => {
                     )
                })}     
            </ul>
-           <button>Clear</button>
+           <button onClick= {(event)=>{{props.clearList(event)}}}>CLEARRR</button>
         </div>
         
     )

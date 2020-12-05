@@ -30,9 +30,10 @@ const App = () => {
     setaddIngredients([items, ...addIngredients])
   }
 
-  // const clearList = () =>{
+  const clearList = () =>{
+    setaddIngredients([])
 
-  // }
+  }
 
   return (
     <div>
@@ -41,7 +42,7 @@ const App = () => {
         <IngredientsList addItem={addItem} items={items}/>
       </div>
       <div>
-        <BurgerPane addIngredients={addIngredients} />
+        <BurgerPane addIngredients={addIngredients} clearList={clearList}/>
       </div>
     </div>
   );
