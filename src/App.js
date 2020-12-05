@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // Components imports
 import BurgerPane from "./components/BurgerPane";
 import IngredientsList from "./components/IngredientsList";
+import IngredientsForm from "./components/IngredientsList";
 
 // CSS imports
 import "./css/App.css";
@@ -37,12 +38,13 @@ const App = () => {
 
   return (
     <div>
-      <h1>Ingredient List</h1>
+      <h1> Burger Ingredients</h1>
       <div>
         <IngredientsList addItem={addItem} items={items}/>
       </div>
       <div>
         <BurgerPane addIngredients={addIngredients} clearList={clearList}/>
+        <IngredientForm />
       </div>
     </div>
   );

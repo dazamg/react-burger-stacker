@@ -3,7 +3,7 @@ import BurgerStack from './BurgerStack'
 
 const BurgerPane = (props) => {
     return (
-        <div style={{ border: '3px solid blue', float:"right", width:"300px", height:"200px", }}>
+        <div style={{float:"right", width:"300px", height:"400px", }}>
             <BurgerStack addIngredients ={props.addIngredients} clearList={props.clearList}/>
            
         </div>
