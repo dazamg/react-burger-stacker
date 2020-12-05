@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // Components imports
 import BurgerPane from "./components/BurgerPane";
 import IngredientsList from "./components/IngredientsList";
-import IngredientsForm from "./components/IngredientsList";
+import IngredientForm from "./components/IngredientForm";
 
 // CSS imports
 import "./css/App.css";
@@ -26,11 +26,18 @@ const App = () => {
  
   const [addIngredients, setaddIngredients] = useState([])
 
+  // Function to add a item to the burgerStack
   const addItem = (event, items) => {
     event.preventDefault()
     setaddIngredients([items, ...addIngredients])
   }
 
+  // Function to create a new Ingredient
+  const newIngredient = (newItem) => {
+    setItems([newItem, ...items])
+  }
+
+  // Function to clear the BurgerStack List
   const clearList = () =>{
     setaddIngredients([])
 
@@ -38,13 +45,14 @@ const App = () => {
 
   return (
     <div>
-      <h1> Burger Ingredients</h1>
+      <h1> 𝐵𝓊𝓇𝑔𝑒𝓇 𝐼𝓃𝑔𝓇𝑒𝒹𝒾𝑒𝓃𝓉𝓈</h1>
       <div>
+        {/* renders the IngredientsList */}
         <IngredientsList addItem={addItem} items={items}/>
       </div>
       <div>
         <BurgerPane addIngredients={addIngredients} clearList={clearList}/>
-        <IngredientForm />
+        <IngredientForm newIngredient={newIngredient}/>
       </div>
     </div>
   );
